@@ -118,6 +118,3 @@ for _ in pairewiseSimilarity:
     # print(DOCS_IDs[doc1] + " -> "+ DOCS_IDs[doc2] + ":  " + str(-value))
     value, doc1, doc2 = heapq.heappop(pairewiseSimilarity)
     print(str(doc1) + " -> "+ str(doc2) + ":  " + str(-value))
-
-
-    
