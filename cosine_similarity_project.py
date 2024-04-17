@@ -24,7 +24,7 @@ def extract_text(directory, filename):
 def calculate_tf(tokens, TOKEN_IDs):
     tfs = {}
     for token in tokens:
-        if token in tfs:
+        if TOKEN_IDs[token] in tfs:
             tfs[TOKEN_IDs[token]] += 1
         else:
             tfs[TOKEN_IDs[token]] = 1
@@ -102,7 +102,6 @@ def main(DIRECTORY):
 DOCS_IDs, TOKEN_IDs, TFs, TERM_TO_DOCS = main(DIRECTORY)
 IDFs = calculate_idfs(TERM_TO_DOCS, TOKEN_IDs, DOCS_IDs)
 TF_IDF_VECTORS = calculate_tf_idfs(TFs, IDFs)
-
 pairewiseSimilarity = calculate_similarity(TF_IDF_VECTORS)
 
 for _ in pairewiseSimilarity:
