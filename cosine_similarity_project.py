@@ -70,10 +70,8 @@ def calculate_similarity(TF_IDF_VECTORS):
             heapq.heappush(max_heap, (-value, doc1, doc2))
     return max_heap
 
-
 def main(DIRECTORY):
     FILES = os.listdir(DIRECTORY)
-
     DOC_ID  = 1
     TOKEN_ID = 1
     DOCS_IDs = {} # dict of <DOCNO> entry to document-id
@@ -96,8 +94,6 @@ def main(DIRECTORY):
         DOC_ID += 1
 
     return DOCS_IDs, TOKEN_IDs, TFs, TERM_TO_DOCS
-
-
 
 DOCS_IDs, TOKEN_IDs, TFs, TERM_TO_DOCS = main(DIRECTORY)
 IDFs = calculate_idfs(TERM_TO_DOCS, TOKEN_IDs, DOCS_IDs)
